@@ -4,6 +4,7 @@
 # Other
 .idea/*
 venv/*
+\.DS_Store
 
 # User-specific stuff
 .idea/**/workspace.xml

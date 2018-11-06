@@ -49,6 +49,9 @@ cmake-build-*/
 # IntelliJ
 out/
 
+#SQLLite3
+data.db
+
 # mpeltonen/sbt-idea plugin
 .idea_modules/
 

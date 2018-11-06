@@ -1,6 +1,10 @@
 import discord
 import asyncio
+import sqlite3
 
+db = sqlite3.connect('data.db')
+cur = db.cursor()
+print('Connection to database successful!\n-----')
 client = discord.Client()
 
 @client.event
@@ -9,6 +13,8 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('------')
+	
+	
 
 @client.event
 async def on_message(message):
@@ -25,3 +31,10 @@ async def on_message(message):
         await client.send_message(message.channel, 'Done sleeping')
 
 client.run('NTA2NTk4MjY0NjY2MDYyODY4.Drk4cw.7Gy8m9e_T5ncDY370aitXq085OE')
+
+async def sql(test):
+	list = test.split('\n')
+	for line in list:
+		cur.execute(line)
+	
+	db.commit()
